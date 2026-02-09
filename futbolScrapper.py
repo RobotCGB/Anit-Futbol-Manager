@@ -18,12 +18,12 @@ def check_estado():
 
         page.wait_for_function("""
         () => {
-            const el = document.querySelector('h1.hero-title.blocked');
+            const el = document.querySelector('h1.hero-title.blocked, h1.hero-title.unblocked');
             return el && (el.innerText === 'SÍ' || el.innerText === 'NO');
         }
         """)
 
-        valor = page.inner_text("h1.hero-title.blocked")
+        valor = page.inner_text("h1.hero-title.blocked, h1.hero-title.unblocked")
         browser.close()
         return valor
 
