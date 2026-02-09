@@ -24,7 +24,7 @@ API_TOKEN= # Creamos un Token personalizado con permisos de edición del DNS par
 
 ZONE_ID= # Información del usuario que se obtiene desde: https://dash.cloudflare.com/
 
-![Imagen señalando la opcion Copy Zone ID.](/image/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
+![Imagen señalando la opcion Copy Zone ID.](/images/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
 
 ## ¿Como ejecutar?
 
@@ -52,7 +52,7 @@ Tenemos que matar el proceso a mano, no hay forma user-friendly para hacerlo. Pr
 
 Nos quedamos con su PID:
 
-![Imagen señalando la opcion Copy Zone ID.](/image/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
+![Imagen señalando la opcion Copy Zone ID.](/images/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
 
 Y lo matamos con:
 
