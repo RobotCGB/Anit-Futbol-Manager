@@ -52,7 +52,7 @@ Tenemos que matar el proceso a mano, no hay forma user-friendly para hacerlo. Pr
 
 Nos quedamos con su PID:
 
-![Imagen señalando la opcion Copy Zone ID.](/images/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
+![Imagen señalando la opcion Copy Zone ID.](/images/ScrapperPID.png "Imagen señalando la opcion Copy Zone ID.")
 
 Y lo matamos con:
 
