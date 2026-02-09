@@ -1,62 +1,59 @@
 # Anit-Futbol-Manager
 
+## Instalar dependencias
+
+Primero creamos el entorno virtual:
+
+`python3 -m venv venvFutbol`
+
+Accedemos a el entorno:
+
+`source venvFutbol/bin/activate`
+
+Instalamos las dependecias:
+
+`python3 -m pip install -r requirements.txt`
+
 ## ¿Como configurar las claves?
 
 1º Renombra el archivo tokens_plantilla.txt a tokens.txt
 
 2º Añade las variables correspondientes siguiendo las instrucciones:
 
-API_TOKEN= #ID de la API de telegram https://my.telegram.org/auth?to=apps
+API_TOKEN= # Creamos un Token personalizado con permisos de edición del DNS para todos los dominios en la configuración de Cloudflare
 
-![This is an alt text.](/image/Markdown-mark.svg "This is a sample image.")
-
-ZONE_ID= # HASH de la API de telegram https://my.telegram.org/auth?to=apps
+ZONE_ID= # Información del usuario que se obtiene desde: https://dash.cloudflare.com/
 
 ![Imagen señalando la opcion Copy Zone ID.](/image/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
 
 ## ¿Como ejecutar?
 
-```
-source venvTelegram/bin/activate
-```
+Antes de nada entramos en el entorno virtual:
 
-```
-python3 script.py
-```
-Si quieres que el comando se ejecute de fonde pudiendo desconectar la terminal, siempre que el ordenador siga encendido:
-```
-nohup python3 script.py &
-```
+`source venvFutbol/bin/activate`
 
-## ¿Como descargo archivos?
+Para comprobar que funciona correctamente ejecuta en terminal:
 
-1º Reenvia o sube los archivos que quieras descargar al bot.
+`python3 futbolManager.py`
 
-2º Los archivos parciales se irán guardando en "./downloads/incomplete"
+Si vemos que realiza la primera ejecución correctamente, esta terminal ya esta haciendo las funciones hasta que la cierres. Pero podemos ejecutar lo siguiente para que funcione de fondo sin molestar:
 
-3º Una vez se haya terminado la descarga se pasará a la carpeta "./downloads/complete"
+`nohup python3 futbolManager.py &`
 
-## ¿Como subir archivos?
+Para comprobar que funciona bien podemos leer su salida con:
 
-1º Añade los archivos que quieras que se suban a telegram a la carpeta "./uploads"
+`cat nohup.out`
 
-2º Escribele al bot "uploadFolder" utilizando la opción en el menú de subidas.
+## ¿Como cerrar?
 
-3º Se subirán todos los archivos al chat con el bot uno a uno.
+Tenemos que matar el proceso a mano, no hay forma user-friendly para hacerlo. Primero buscamos el proceso:
 
-*Si el archivo pesa más de 2GB, que es el límite para un mismo archivo en telegram, lo comprimirá por partes .7z de 1,9GB.
+`ps aux | grep futbolManager.py`
 
-Para descomprimir estos archivos, simplemente tendrás que ejecutar:
-```
-7z x NOMBRE_DEL_ARCHIVO.7z.001
-```
-### Consejo para uploads 
-Si quieres descargar archivos que ya tengas organizados en tu ordenador sin moverlos, puedes crear un soft link a la carpeta uploads. 
+Nos quedamos con su PID:
 
-Por ejemplo, si quiero subir la carpeta
-"/home/myUser/Series/" puedo hacer:
+![Imagen señalando la opcion Copy Zone ID.](/image/ZoneID.png "Imagen señalando la opcion Copy Zone ID.")
 
-`ln -s /home/myUser/Series/MiSerie ./uploads/MiSerie`
+Y lo matamos con:
 
-y usando uploadFolder se descargarán los archivos como si estuviesen ahí. Luego puedes borrar
-el enlace y los archivos se mantendrán donde estaban ya que solo es un enlace.
+`sudo kill PID_DEL_COMANDO_ANTERIOR`
